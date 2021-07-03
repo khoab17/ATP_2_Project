@@ -42,7 +42,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.User.DOB, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.User.DOB, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.TextBoxFor(model => model.User.DOB, new { type = "date" })
             @Html.ValidationMessageFor(model => model.User.DOB, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -55,13 +55,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.User.RegDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.User.RegDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.User.RegDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
+ 
 
     <div class="form-group">
         @Html.LabelFor(model => model.Credential.Password, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -73,6 +67,8 @@
 
 
         @Html.HiddenFor(model => model.Credential.UserType, htmlAttributes: new { value = "Admin" })
+        
+
 
 
 

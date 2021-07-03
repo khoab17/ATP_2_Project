@@ -29,7 +29,12 @@ namespace ECS.Controllers
         {
             //context.Users.Add(admin);
             //context.SaveChanges();
+            userCredential.User.RegDate = DateTime.Now;
             context.Users.Add(userCredential.User);
+            context.SaveChanges();
+            User user=context.Users.Where(x => x.Email == userCredential.User.Email).FirstOrDefault();
+            userCredential.Credential.UserId = user.Id;
+            userCredential.Credential.UserType = "Admin";
             context.Credentials.Add(userCredential.Credential);
             context.SaveChanges();
             

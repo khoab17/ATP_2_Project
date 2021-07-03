@@ -18,7 +18,5 @@ namespace ECS.Models
         public string Address { get; set; }
         public DateTime RegDate { get; set; }
 
-        public virtual Credential Credential { get; set; }
-
     }
 }

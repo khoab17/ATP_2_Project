@@ -81,5 +81,5 @@ C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.csproj.CopyComplete
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.dll
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.pdb
-C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.InitDB.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.fk.resources
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.csproj.GenerateResource.cache

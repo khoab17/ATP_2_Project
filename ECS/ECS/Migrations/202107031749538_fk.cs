@@ -1,9 +1,9 @@
-﻿namespace ECS.Migrations
+namespace ECS.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitDB : DbMigration
+    public partial class fk : DbMigration
     {
         public override void Up()
         {
@@ -35,26 +35,10 @@
                 "dbo.Credentials",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         Password = c.String(),
                         UserType = c.String(),
                         UserId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.Id)
-                .Index(t => t.Id);
-            
-            CreateTable(
-                "dbo.Users",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Email = c.String(),
-                        Phone = c.String(),
-                        DOB = c.String(),
-                        Address = c.String(),
-                        RegDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -80,19 +64,31 @@
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Email = c.String(),
+                        Phone = c.String(),
+                        DOB = c.String(),
+                        Address = c.String(),
+                        RegDate = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Orders", "StatusId", "dbo.Status");
-            DropForeignKey("dbo.Credentials", "Id", "dbo.Users");
             DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropIndex("dbo.Orders", new[] { "StatusId" });
-            DropIndex("dbo.Credentials", new[] { "Id" });
             DropIndex("dbo.Products", new[] { "CategoryId" });
+            DropTable("dbo.Users");
             DropTable("dbo.Status");
             DropTable("dbo.Orders");
-            DropTable("dbo.Users");
             DropTable("dbo.Credentials");
             DropTable("dbo.Products");
             DropTable("dbo.Categories");
