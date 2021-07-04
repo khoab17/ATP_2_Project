@@ -6,7 +6,9 @@
 @{
     Layout = "~/Views/Shared/_Admin_Layout.cshtml";
 }
-<h2>Edit</h2>
+
+
+<h2>Edit Seller</h2>
 
 
 @using (Html.BeginForm())
@@ -76,7 +78,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index","AdminSellers")
 </div>
 
 @section Scripts {

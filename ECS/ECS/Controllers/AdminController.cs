@@ -75,5 +75,19 @@ namespace ECS.Controllers
             context.SaveChanges();
             return RedirectToAction("Index","Admin");
         }
+
+        public ActionResult Delete(int Id)
+        {
+            var user = context.Users.Where(x => x.Id == Id).FirstOrDefault();
+            return View(user);
+        }
+        [HttpPost]
+        public ActionResult Delete(User user)
+        {
+            context.Users.Attach(user);
+            context.Users.Remove(user);
+            context.SaveChanges();
+            return RedirectToAction("Index", "Admin");
+        }
     }
 }
