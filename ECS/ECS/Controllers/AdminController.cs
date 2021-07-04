@@ -2,6 +2,7 @@
 using ECS.Models.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,7 +16,27 @@ namespace ECS.Controllers
 
         public ActionResult Index()
         {
-            var users = context.Users.ToList();
+            //context.Users.Where(x=>x.Id)
+            //var admin=context.Credentials.Where(x => x.UserType == "Admin").FirstOrDefault();
+            // var users = context.Users.Where(x => x.Id == admin.UserId).FirstOrDefault();
+
+            var admin = context.Credentials.ToList();
+            var user = context.Users.ToList();
+            List<Credential> admins=new List<Credential>();
+            List<User> users = new List<User>();
+            foreach (var item in admin)
+            {
+                if (item.UserType == "Admin")
+                {
+                    foreach(var i in user)
+                    {
+                        if(i.Id==item.UserId)
+                        {
+                            users.Add(i);
+                        }
+                    }
+                }
+            }
             return View(users);
         }
 
@@ -38,6 +59,20 @@ namespace ECS.Controllers
             context.Credentials.Add(userCredential.Credential);
             context.SaveChanges();
             
+            return RedirectToAction("Index","Admin");
+        }
+
+        public ActionResult Edit(int Id)
+        {
+            var user = context.Users.Where(x => x.Id == Id).FirstOrDefault();
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            context.Users.AddOrUpdate(user);
+            context.SaveChanges();
             return RedirectToAction("Index","Admin");
         }
     }
