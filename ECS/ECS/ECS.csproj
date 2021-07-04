@@ -192,10 +192,12 @@
     <Content Include="Views\AdminSellers\Index.cshtml" />
     <Content Include="Views\AdminSellers\Edit.cshtml" />
     <Content Include="Views\AdminSellers\Delete.cshtml" />
+    <Content Include="Views\AdminBuyers\Index.cshtml" />
+    <Content Include="Views\AdminBuyers\Edit.cshtml" />
+    <Content Include="Views\AdminBuyers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminBuyers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
