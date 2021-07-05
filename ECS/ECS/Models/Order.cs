@@ -9,6 +9,7 @@ namespace ECS.Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        //public int MyProperty { get; set; }
         public DateTime OrderTime { get; set; }
         public int StatusId { get; set; }
 

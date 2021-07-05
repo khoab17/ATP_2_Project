@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminBuyersController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminProductsController.cs" />
     <Compile Include="Controllers\AdminSellersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,6 +138,10 @@
     <Compile Include="Migrations\202107031749538_fk.Designer.cs">
       <DependentUpon>202107031749538_fk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107050840402_ProductTableUP.cs" />
+    <Compile Include="Migrations\202107050840402_ProductTableUP.Designer.cs">
+      <DependentUpon>202107050840402_ProductTableUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Credential.cs" />
@@ -145,6 +150,8 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\ProductCategory.cs" />
+    <Compile Include="Models\ViewModel\ProductCategoryName.cs" />
     <Compile Include="Models\ViewModel\UserCredential.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +202,8 @@
     <Content Include="Views\AdminBuyers\Index.cshtml" />
     <Content Include="Views\AdminBuyers\Edit.cshtml" />
     <Content Include="Views\AdminBuyers\Delete.cshtml" />
+    <Content Include="Views\AdminProducts\Create.cshtml" />
+    <Content Include="Views\AdminProducts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -215,6 +224,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107031749538_fk.resx">
       <DependentUpon>202107031749538_fk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107050840402_ProductTableUP.resx">
+      <DependentUpon>202107050840402_ProductTableUP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
