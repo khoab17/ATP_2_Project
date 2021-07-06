@@ -52,9 +52,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -104,9 +109,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -179,11 +181,14 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\BarChartModel.cs" />
     <Compile Include="Models\ViewModel\CustomCred.cs" />
+    <Compile Include="Models\ViewModel\DefaultViewModel.cs" />
     <Compile Include="Models\ViewModel\ProductCategory.cs" />
     <Compile Include="Models\ViewModel\ProductCategoryName.cs" />
     <Compile Include="Models\ViewModel\UserCredential.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CategoryRepo.cs" />
     <Compile Include="WebRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +243,9 @@
     <Content Include="Views\Authorization\Login.cshtml" />
     <Content Include="Views\AdminProducts\Edit.cshtml" />
     <Content Include="Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Views\Admin\UserProfile.cshtml" />
+    <Content Include="Views\AdminProducts\CreateCategory.cshtml" />
+    <Content Include="Views\AdminProducts\CategoryProductAmountChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

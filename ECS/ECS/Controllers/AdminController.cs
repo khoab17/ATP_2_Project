@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Web.Security;
+//using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 
@@ -100,6 +102,20 @@ namespace ECS.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
+        //Admin Profile======================================
+
+        public ActionResult UserProfile()
+        {
+
+            //string userid = HttpContext.User.Identity.Name;
+            // int i = User.Identity.
+            //var u = User.Identity;
+            int userId = Convert.ToInt32(Session["UserId"]);
+            User user = context.Users.Where(x => x.Id == userId).FirstOrDefault();
+            return View(user);
+        }
+
+        
 
     }
 }

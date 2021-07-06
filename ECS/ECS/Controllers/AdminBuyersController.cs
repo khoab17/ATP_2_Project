@@ -1,4 +1,6 @@
 ﻿using ECS.Models;
+using ECS.Models.ViewModel;
+using ECS.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -69,6 +71,7 @@ namespace ECS.Controllers
             }
             return RedirectToAction("Index", "AdminBuyers");
         }
+
 
     }
 }

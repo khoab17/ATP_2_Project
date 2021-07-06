@@ -1,5 +1,6 @@
 ﻿using ECS.Models;
 using ECS.Models.ViewModel;
+using ECS.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -94,6 +95,42 @@ namespace ECS.Controllers
             return RedirectToAction("Index", "AdminProducts");
         }
 
+        public ActionResult CreateCategory()
+        {
+            Category category = new Category();
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult CreateCategory(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return RedirectToAction("Index", "AdminProducts");
+            }
+            else
+                return View(category);
+        }
+
+
+        //================================datavisu==========================================
+        public ActionResult CategoryProductAmountChart()
+        {
+            CategoryRepo category = new CategoryRepo();
+            var list = category.NumberOfProductsInCategory();
+
+            List<BarChartModel> categoriesProductAmount = new List<BarChartModel>();
+
+            foreach (var data in list)
+            {
+                BarChartModel chart = new BarChartModel(data.Name, (double)data.DefaultCount);
+                categoriesProductAmount.Add(chart);
+            }
+
+            ViewBag.DataPoints = Newtonsoft.Json.JsonConvert.SerializeObject(categoriesProductAmount);
+            return View();
+        }
 
     }
 }

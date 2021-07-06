@@ -33,6 +33,8 @@ namespace ECS.Controllers
 
                         if(cred.Password==credential.Password)
                         {
+                        //string name = user.Id.ToString();
+                        Session["UserId"] = cred.UserId;
                             FormsAuthentication.SetAuthCookie(user.Name, false);
                             if(cred.UserType=="Admin")
                             {
@@ -58,6 +60,7 @@ namespace ECS.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            Session["UserId"] = null;
             return RedirectToAction("Login", "Authorization");
         }
     }
