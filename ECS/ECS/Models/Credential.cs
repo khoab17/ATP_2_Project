@@ -17,5 +17,8 @@ namespace ECS.Models
         public string UserType { get; set; }  
         public int UserId { get; set; }
 
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+
     }
 }

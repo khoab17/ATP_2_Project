@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ECS.Controllers
 {
+    [Authorize]
     public class AdminSellersController : Controller
     {
         ECSEntities context = new ECSEntities();

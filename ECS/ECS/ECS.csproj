@@ -151,6 +151,14 @@
     <Compile Include="Migrations\202107051510354_update_user_table.Designer.cs">
       <DependentUpon>202107051510354_update_user_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107060524193_db.cs" />
+    <Compile Include="Migrations\202107060524193_db.Designer.cs">
+      <DependentUpon>202107060524193_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107060529296_fk1.cs" />
+    <Compile Include="Migrations\202107060529296_fk1.Designer.cs">
+      <DependentUpon>202107060529296_fk1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Credential.cs" />
@@ -244,6 +252,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051510354_update_user_table.resx">
       <DependentUpon>202107051510354_update_user_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060524193_db.resx">
+      <DependentUpon>202107060524193_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107060529296_fk1.resx">
+      <DependentUpon>202107060529296_fk1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,23 +25,22 @@ namespace ECS.Controllers
             {
                 //bool IsValid = context.Credentials.Any(m =>m.UserId == credential.UserId && m.Password == credential.Password).
                 //bool IsValid = false;
-                Credential cr=context.Credentials.Where(x => x.UserId == credential.UserId && x.Password == credential.Password).FirstOrDefault();
-                if(cr!=null)
+                User user=context.Users.Where(x => x.Email == credential.Email).FirstOrDefault();
+                if(user!=null)
                 {
-                    var users=context.Users.ToList();
-                    foreach(var item in users)
-                    {
-                        if(item.Id==credential.UserId)
+                    Credential cred = context.Credentials.Where(m => m.UserId == user.Id).FirstOrDefault();
+                    //var users=context.Users.ToList();
+
+                        if(cred.Password==credential.Password)
                         {
-                            FormsAuthentication.SetAuthCookie(item.Name, false);
+                            FormsAuthentication.SetAuthCookie(user.Name, false);
                             return RedirectToAction("Index", "Admin");
                         }
-                    }
                    
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid id or password");
+                    ModelState.AddModelError("Invalid", "Invalid Email or Password");
                     return View(credential);
                 }
             }

@@ -5,8 +5,9 @@
 
 <h2>Login</h2>
 <form method="post" action="/Authorization/Login">
-    <input type="text" class="form-control" name="UserId" value="" placeholder="User Name.." />
-    @Html.ValidationMessage("UserName", htmlAttributes: new { @class = "text-danger" })
+    @Html.ValidationMessage("Invalid", htmlAttributes: new { @class = "text-danger" })
+    <input type="text" class="form-control" name="Email" value="@Model.Email" placeholder="User email.." />
+    @Html.ValidationMessage("Email", htmlAttributes: new { @class = "text-danger" })
     <input type="password" class="form-control" name="Password" value="@Model.Password" placeholder="password.." />
     @Html.ValidationMessage("Password", htmlAttributes: new { @class = "text-danger" })
     <input type="submit" class="form-control" value="submit" />
