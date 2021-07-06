@@ -142,6 +142,14 @@
     <Compile Include="Migrations\202107050840402_ProductTableUP.Designer.cs">
       <DependentUpon>202107050840402_ProductTableUP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107051502583_Required_modified.cs" />
+    <Compile Include="Migrations\202107051502583_Required_modified.Designer.cs">
+      <DependentUpon>202107051502583_Required_modified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051510354_update_user_table.cs" />
+    <Compile Include="Migrations\202107051510354_update_user_table.Designer.cs">
+      <DependentUpon>202107051510354_update_user_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Credential.cs" />
@@ -194,7 +202,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Shared\_Admin_Layout.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\AdminSellers\Index.cshtml" />
     <Content Include="Views\AdminSellers\Edit.cshtml" />
@@ -204,6 +211,7 @@
     <Content Include="Views\AdminBuyers\Delete.cshtml" />
     <Content Include="Views\AdminProducts\Create.cshtml" />
     <Content Include="Views\AdminProducts\Index.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107050840402_ProductTableUP.resx">
       <DependentUpon>202107050840402_ProductTableUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051502583_Required_modified.resx">
+      <DependentUpon>202107051502583_Required_modified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051510354_update_user_table.resx">
+      <DependentUpon>202107051510354_update_user_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

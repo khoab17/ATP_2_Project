@@ -84,3 +84,5 @@ C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.fk.resources
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.csproj.GenerateResource.cache
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.ProductTableUP.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.Required_modified.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.update_user_table.resources
