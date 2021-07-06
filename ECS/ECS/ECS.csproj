@@ -130,6 +130,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminProductsController.cs" />
     <Compile Include="Controllers\AdminSellersController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +159,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\CustomCred.cs" />
     <Compile Include="Models\ViewModel\ProductCategory.cs" />
     <Compile Include="Models\ViewModel\ProductCategoryName.cs" />
     <Compile Include="Models\ViewModel\UserCredential.cs" />
@@ -212,6 +214,7 @@
     <Content Include="Views\AdminProducts\Create.cshtml" />
     <Content Include="Views\AdminProducts\Index.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Authorization\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
