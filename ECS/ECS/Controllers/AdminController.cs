@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ECS.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin

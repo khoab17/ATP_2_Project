@@ -7,12 +7,10 @@
     Layout = "~/Views/Shared/_Admin_Layout.cshtml";
 }
 
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h5>
+    @Html.ActionLink("Create New Product", "Create")
+</h5>
+<h2>Product List</h2>
 <table class="table">
     <tr>
 
@@ -61,7 +59,6 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Product.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Product.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Product.Id })
             </td>
         </tr>

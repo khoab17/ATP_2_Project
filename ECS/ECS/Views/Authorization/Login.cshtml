@@ -2,13 +2,21 @@
 @{
     ViewBag.Title = "Login";
 }
+<div class="text-center">
+    <h2>Login</h2>
 
-<h2>Login</h2>
-<form method="post" action="/Authorization/Login">
-    @Html.ValidationMessage("Invalid", htmlAttributes: new { @class = "text-danger" })
-    <input type="text" class="form-control" name="Email" value="@Model.Email" placeholder="User email.." />
-    @Html.ValidationMessage("Email", htmlAttributes: new { @class = "text-danger" })
-    <input type="password" class="form-control" name="Password" value="@Model.Password" placeholder="password.." />
-    @Html.ValidationMessage("Password", htmlAttributes: new { @class = "text-danger" })
-    <input type="submit" class="form-control" value="submit" />
-</form>
+
+    <form method="post" action="/Authorization/Login">
+
+        @Html.ValidationMessage("Invalid", htmlAttributes: new { @class = "text-danger" })<br><br>
+        <input type="text" class="form-control center-block" name="Email" value="@Model.Email" placeholder="User email.." />
+
+        @Html.ValidationMessage("Email", htmlAttributes: new { @class = "text-danger" })<br>
+
+        <input type="password" class="form-control center-block" name="Password" value="@Model.Password" placeholder="password.." />
+
+        @Html.ValidationMessage("Password", htmlAttributes: new { @class = "text-danger" })<br>
+
+        <input type="submit" class="form-control center-block success" value="submit" />
+    </form>
+</div>

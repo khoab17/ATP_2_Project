@@ -2,12 +2,14 @@
 using ECS.Models.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace ECS.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminProductsController : Controller
     {
         ECSEntities context = new ECSEntities();
@@ -40,8 +42,8 @@ namespace ECS.Controllers
 
         public ActionResult Create()
         {
-            Category category = new Category();
-            Product product = new Product();
+            //Category category = new Category();
+            //Product product = new Product();
             ProductCategory pc = new ProductCategory();
             pc.Categories = context.Categories.ToList();
             return View(pc);
@@ -55,5 +57,43 @@ namespace ECS.Controllers
             context.SaveChanges();
             return RedirectToAction("Index","AdminProducts");
         }
+
+        public ActionResult Edit(int Id)
+        {
+            ProductCategory productCategory= new ProductCategory();
+            Product product = context.Products.Where(x => x.Id == Id).FirstOrDefault();
+            productCategory.Product = product;
+            productCategory.Categories = context.Categories.ToList();
+            return View(productCategory);
+        }
+        [HttpPost]
+        public ActionResult Edit(ProductCategory p)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Products.AddOrUpdate(p.Product);
+                context.SaveChanges();
+                return RedirectToAction("Index", "AdminProducts");
+            }
+            else
+                return View(p);
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            Product product = context.Products.Where(x => x.Id == Id).FirstOrDefault();
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult Delete(Product product)
+        {
+            Product p = context.Products.Where(x => x.Id == product.Id).FirstOrDefault();
+            context.Products.Attach(p);
+            context.Products.Remove(p);
+            context.SaveChanges();
+            return RedirectToAction("Index", "AdminProducts");
+        }
+
+
     }
 }

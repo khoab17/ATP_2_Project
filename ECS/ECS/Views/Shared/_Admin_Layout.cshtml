@@ -25,7 +25,10 @@
                     <li>@Html.ActionLink("Buyers", "Index", "AdminBuyers")</li>
                     <li>@Html.ActionLink("Products", "Index", "AdminProducts")</li>
                     <li>@Html.ActionLink("Sales Information", "Index", "Admin")</li>
-                    <li>@Html.ActionLink(@User.Identity.Name, "Index", "Admin")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink(@User.Identity.Name, "Index", "Admin")</li>
+                    }
                     <li>@Html.ActionLink("Logout", "Login", "Authorization")</li>
                 </ul>
             </div>

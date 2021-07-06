@@ -34,9 +34,17 @@ namespace ECS.Controllers
                         if(cred.Password==credential.Password)
                         {
                             FormsAuthentication.SetAuthCookie(user.Name, false);
-                            return RedirectToAction("Index", "Admin");
+                            if(cred.UserType=="Admin")
+                            {
+                                return RedirectToAction("Index", "Admin");
+                            }
+                           
                         }
-                   
+                        else
+                        {
+                        ModelState.AddModelError("Invalid", "Incorrect Password");
+                        return View(credential);
+                    }    
                 }
                 else
                 {

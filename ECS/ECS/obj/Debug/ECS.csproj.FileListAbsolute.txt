@@ -176,3 +176,6 @@ C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\EC
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.pdb
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.db.resources
 C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.fk1.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.productTable_updated.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.productTable_updated2.resources
+C:\Users\syed\OneDrive\Work\ATP_Project\ECS-2\ATP_2_Project\ECS\ECS\obj\Debug\ECS.Migrations.productTable_updated21.resources
