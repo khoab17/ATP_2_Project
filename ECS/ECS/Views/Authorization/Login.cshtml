@@ -18,5 +18,7 @@
         @Html.ValidationMessage("Password", htmlAttributes: new { @class = "text-danger" })<br>
 
         <input type="submit" class="form-control center-block success" value="submit" />
+
+        @Html.ActionLink("Sign up", "Registration", "Authorization")
     </form>
 </div>

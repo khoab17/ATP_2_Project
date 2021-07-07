@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202107070635390_db_update_all_table.Designer.cs">
       <DependentUpon>202107070635390_db_update_all_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107070827242_updatedOrderDetailsTable_fk.cs" />
+    <Compile Include="Migrations\202107070827242_updatedOrderDetailsTable_fk.Designer.cs">
+      <DependentUpon>202107070827242_updatedOrderDetailsTable_fk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Credential.cs" />
@@ -229,9 +233,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Shared\_Admin_Layout.cshtml" />
@@ -251,6 +252,9 @@
     <Content Include="Views\Admin\UserProfile.cshtml" />
     <Content Include="Views\AdminProducts\CreateCategory.cshtml" />
     <Content Include="Views\AdminProducts\CategoryProductAmountChart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Buyer_Layout.cshtml" />
+    <Content Include="Views\Authorization\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107070635390_db_update_all_table.resx">
       <DependentUpon>202107070635390_db_update_all_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070827242_updatedOrderDetailsTable_fk.resx">
+      <DependentUpon>202107070827242_updatedOrderDetailsTable_fk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

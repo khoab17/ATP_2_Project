@@ -36,10 +36,14 @@ namespace ECS.Controllers
                         //string name = user.Id.ToString();
                         Session["UserId"] = cred.UserId;
                             FormsAuthentication.SetAuthCookie(user.Name, false);
-                            if(cred.UserType=="Admin")
-                            {
-                                return RedirectToAction("Index", "Admin");
-                            }
+                        if (cred.UserType == "Admin")
+                        {
+                            return RedirectToAction("Index", "Admin");
+                        }
+                        else if (cred.UserType == "Buyer")
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
                            
                         }
                         else
@@ -56,6 +60,35 @@ namespace ECS.Controllers
             }
             return View(credential);
         }
+    //=========================Registraion Panel===================================
+        public ActionResult Registration()
+        {
+            UserCredential userCredential = new UserCredential();
+            return View(userCredential);
+        }
+        [HttpPost]
+        public ActionResult Registration(UserCredential userCredential)
+        {
+            if(ModelState.IsValid)
+            {
+                userCredential.User.RegDate = DateTime.Now;
+                context.Users.Add(userCredential.User);
+                context.SaveChanges();
+                User user = context.Users.Where(x => x.Email == userCredential.User.Email).FirstOrDefault();
+                userCredential.Credential.UserId = user.Id;
+                //userCredential.Credential.UserType = "Admin";
+                context.Credentials.Add(userCredential.Credential);
+                context.SaveChanges();
+                FormsAuthentication.SetAuthCookie(user.Name, false);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(userCredential);
+            }
+            
+        }
+        //===========================================================
 
         public ActionResult Logout()
         {
