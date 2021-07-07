@@ -44,8 +44,13 @@ namespace ECS.Controllers
                         {
                             return RedirectToAction("Index", "Home");
                         }
-                           
+
+                        else if (cred.UserType == "Seller")
+                        {
+                            return RedirectToAction("Index", "Buyer");
                         }
+
+                    }
                         else
                         {
                         ModelState.AddModelError("Invalid", "Incorrect Password");
