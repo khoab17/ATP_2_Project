@@ -173,11 +173,16 @@
     <Compile Include="Migrations\202107061118338_productTable_updated21.Designer.cs">
       <DependentUpon>202107061118338_productTable_updated21.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107070635390_db_update_all_table.cs" />
+    <Compile Include="Migrations\202107070635390_db_update_all_table.Designer.cs">
+      <DependentUpon>202107070635390_db_update_all_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Credential.cs" />
     <Compile Include="Models\ECSEntities.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
@@ -290,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061118338_productTable_updated21.resx">
       <DependentUpon>202107061118338_productTable_updated21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070635390_db_update_all_table.resx">
+      <DependentUpon>202107070635390_db_update_all_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
