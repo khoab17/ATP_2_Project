@@ -23,8 +23,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Admin")</li>
                     <li>@Html.ActionLink("Sellers", "Index", "AdminSellers")</li>
                     <li>@Html.ActionLink("Buyers", "Index", "AdminBuyers")</li>
-                    <li>@Html.ActionLink("Products", "Index", "AdminProducts")</li>
-                    <li>@Html.ActionLink("Sales Information", "CategoryProductAmountChart", "AdminProducts")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Sales Information", "CategoryProductAmountChart", "Products")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("User: "+@User.Identity.Name, "UserProfile/", "Admin")</li>

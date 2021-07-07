@@ -8,6 +8,11 @@ namespace ECS.Models
 {
     public class OrderDetails
     {
+        public OrderDetails(Product product,int Quantity)
+        {
+            this.Product = product;
+            this.Quantity = Quantity;
+        }
         public int Id { get; set; }
         public  int  ProductId { get; set; }
 

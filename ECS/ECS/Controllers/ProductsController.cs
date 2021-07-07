@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace ECS.Controllers
 {
     [Authorize(Roles ="Admin")]
-    public class AdminProductsController : Controller
+    public class ProductsController : Controller
     {
         ECSEntities context = new ECSEntities();
 
@@ -45,6 +45,7 @@ namespace ECS.Controllers
         {
             //Category category = new Category();
             //Product product = new Product();
+            ViewBag.Id = Session["UserId"];
             ProductCategory pc = new ProductCategory();
             pc.Categories = context.Categories.ToList();
             return View(pc);
@@ -56,7 +57,7 @@ namespace ECS.Controllers
             pp = p.Product;
             context.Products.Add(pp);
             context.SaveChanges();
-            return RedirectToAction("Index","AdminProducts");
+            return RedirectToAction("Index","Products");
         }
 
         public ActionResult Edit(int Id)
@@ -74,7 +75,7 @@ namespace ECS.Controllers
             {
                 context.Products.AddOrUpdate(p.Product);
                 context.SaveChanges();
-                return RedirectToAction("Index", "AdminProducts");
+                return RedirectToAction("Index", "Products");
             }
             else
                 return View(p);
@@ -92,7 +93,7 @@ namespace ECS.Controllers
             context.Products.Attach(p);
             context.Products.Remove(p);
             context.SaveChanges();
-            return RedirectToAction("Index", "AdminProducts");
+            return RedirectToAction("Index", "Products");
         }
 
         public ActionResult CreateCategory()
@@ -107,12 +108,13 @@ namespace ECS.Controllers
             {
                 context.Categories.Add(category);
                 context.SaveChanges();
-                return RedirectToAction("Index", "AdminProducts");
+                return RedirectToAction("Index", "Products");
             }
             else
                 return View(category);
         }
 
+       
 
         //================================datavisu==========================================
         public ActionResult CategoryProductAmountChart()

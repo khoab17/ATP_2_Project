@@ -24,7 +24,7 @@
                     <li>@Html.ActionLink("Cart", "Cart", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("User: " + @User.Identity.Name, "UserProfile/", "Admin")</li>
+                        <li>@Html.ActionLink("User: " + @User.Identity.Name, "Profile", "Home")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Authorization")</li>
                     }
                     else

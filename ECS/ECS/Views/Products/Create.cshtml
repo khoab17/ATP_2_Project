@@ -77,6 +77,8 @@
                 @Html.ValidationMessageFor(model => model.Product.Price, "", new { @class = "text-danger" })
             </div>
         </div>
+
+         <input type="hidden" name="Product.SellerId" value="@ViewBag.Id"/>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
